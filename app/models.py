@@ -20,7 +20,7 @@ def get_all(self):
 products = [
     {
         'id_product':1,
-        'title':'Inception',
+        'title':'Product',
         'price':'Christopher Nolan',
         'banner':'inception_banner.jpg'
     },
