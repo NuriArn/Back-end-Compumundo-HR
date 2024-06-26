@@ -1,6 +1,6 @@
 from flask import Flask
 #Importo un objeto de la clase flask
-from appp.views import *
+from app.views import *
 #Importo todas las funciones desde las vistas
 
 #Crear una instancia de Flask

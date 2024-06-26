@@ -333,4 +333,7 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
+# Excluye la carpeta 'app' y su contenido
+!app/
+
 # End of https://www.toptal.com/developers/gitignore/api/python,flask,windows,linux,macos

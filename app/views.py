@@ -1,5 +1,5 @@
 from flask import jsonify
-from appp.models import products
+from app.models import products
 
 #Una función del módulo flask para convertir a formato json listas y diccionarios de python
 
