@@ -3,6 +3,7 @@ class Product:
         self.id_product
         self.title
         self.price
+        self.release_date
         self.banner
 
 def save(self):
