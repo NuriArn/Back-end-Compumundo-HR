@@ -3,8 +3,14 @@ from flask import Flask
 from app.views import *
 #Importo todas las funciones desde las vistas
 
+from app.database import init_app
+#Importo la función que inicializaba la aplicación con el manejo de la bd
+
 #Crear una instancia de Flask
 app = Flask(__name__)
+
+#Ejecuto la función para inicializar la app para el manejo de la bd
+init_app(app)
 
 #Asociación de las rutas con las vistas, el método correspondiente
 app.route('/',methods=['GET'])(index)
