@@ -1,5 +1,5 @@
 from flask import jsonify
-from app.models import products
+from app.models import Product
 
 #Una función del módulo flask para convertir a formato json listas y diccionarios de python
 
@@ -16,6 +16,7 @@ def get_product():
 
 #Función que busca todo el listado de productos
 def get_all_products():
+    products = Product.get_all()
     return jsonify(products)
 
 def create_product():
