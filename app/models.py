@@ -11,13 +11,13 @@ class Product:
         self.banner = banner
 
 
-    @staticmethod
-    #Lógica para traer los productos:
-    def get_all(): 
+    @staticmethod 
+    def get_all(): #Lógica para traer los productos.
         db = get_db()
         cursor = db.cursor() #cursor permite ejecutar ciertas instrucciones de la base de datos y extraer el resultado de esa consulta o de la conexión con la bd.
         cursor.execute("SELECT * FROM products")
         rows = cursor.fetchall() 
+        cursor.close()
         return rows
 
     def save(self):

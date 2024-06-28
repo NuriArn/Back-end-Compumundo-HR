@@ -1,10 +1,9 @@
 from flask import Flask
 #Importo un objeto de la clase flask
-from app.views import *
-#Importo todas las funciones desde las vistas
-
 from app.database import init_app
 #Importo la función que inicializaba la aplicación con el manejo de la bd
+from app.views import *
+#Importo todas las funciones desde las vistas
 
 #Crear una instancia de Flask
 app = Flask(__name__)

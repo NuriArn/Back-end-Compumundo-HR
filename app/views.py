@@ -11,13 +11,14 @@ def index():
 """Un crud de productos"""
 #Función que busca un producto
 
-def get_product():
-    pass
-
 #Función que busca todo el listado de productos
+
 def get_all_products():
     products = Product.get_all()
     return jsonify(products)
+
+def get_product():
+    pass
 
 def create_product():
     pass
