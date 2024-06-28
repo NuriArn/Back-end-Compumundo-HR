@@ -3,7 +3,7 @@ from app.database import get_db
 
 class Product:
     #Método constructor
-    def __init__(self,id_product=None, title=None,price=None,release_date=None, banner=None):
+    def __init__(self,id_product=None, title=None,price=None,release_date=None,banner=None):
         self.id_product = id_product
         self.title = title
         self.price = price
