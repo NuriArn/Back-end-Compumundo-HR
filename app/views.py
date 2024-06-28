@@ -15,6 +15,7 @@ def index():
 
 def get_all_products():
     products = Product.get_all()
+    list_products = [product.serialize() for product in products]
     return jsonify(products)
 
 def get_product():
