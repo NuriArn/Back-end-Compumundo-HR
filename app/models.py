@@ -20,7 +20,7 @@ class Product:
         rows = cursor.fetchall() 
         products = [Product(id_product=row[0], title=row[1], price=row[2], release_date=row[3], banner=row[4]) for row in rows]
         cursor.close()
-        return rows
+        return products
 
     def save(self):
         #Lógica para el INSERT/UPDATE en la base de datos
