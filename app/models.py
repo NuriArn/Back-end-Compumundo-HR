@@ -24,11 +24,29 @@ class Product:
 
     def save(self):
         #Lógica para el INSERT/UPDATE en la base de datos
-        pass
+        db = get_db()
+        cursor = db.cursor()
+        if self.id_product:
+            cursor.execute("""
+                UPDATE product SET title = %s, price = %s, release_date = %s, banner = %s
+                WHERE id_product =%s
+            """, (self.title, self.price, self.release_date, self.banner, self.id_product))
+        else:
+            cursor.execute("""
+                INSERT INTO product (title, price, release_date, banner) VALUES (%s, %s, %s, %s)
+                """, (self.title, self.price, self.release_date, self.banner))
+                self.id_product = cursor.lastrowid
+        db.commit()
+        cursor.close()
+       
 
     def delete(self):
         #Lógica para hacer un DELETE en la base de datos
-        pass
+        db = get_db()
+        cursor = db.cursor()
+        cursor.execute("DELETE FROM products WHERE id_product = %s", (self.id_product,))
+        db.commit()
+        cursor.close()
 
 
     def serialize(self):

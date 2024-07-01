@@ -18,15 +18,34 @@ def get_all_products():
     list_products = [product.serialize() for product in products]
     return jsonify(products)
 
-def get_product():
-    pass
+def get_product(product_id):
+    product = Product.get_by_id(product_id)
+if not product:
+return jsonify({'message': 'Product not found'}), 404
+return jsonify(product.serialize())
+
 
 def create_product():
-    pass
+    data = request.json
+    new_product = Product (None, data[title],data[price], data[release_date], data[banner])
+    new_product.save()
+    return jsonify ({'message':'Producto creado con exito'})
 
-def update_product():
-    pass
+def update_product(product_id):
+    product = Product.get_by_id(product_id)
+if not product:
+return jsonify({'message': 'Product not found'}), 404
+data = request.json
+product.title = data['title']
+product.director = data['price']
+product.release_date = data['release_date']
+product.banner = data['banner']
+product.save()
+return jsonify({'message': 'Product updated successfully'})
 
-def delete_product():
-    pass
-
+def delete_product(product_id):
+   product = Product.get_by_id(product_id)
+if not product:
+    return jsonify({'message': 'Product not found'}), 404
+product.delete()
+return jsonify({'message': 'Product deleted successfully'})
